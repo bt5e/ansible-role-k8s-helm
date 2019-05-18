@@ -1,0 +1,27 @@
+---
+- name: Create temporary download directory
+  file:
+    path: "{{ k8s_helm_tmp_download_dir }}"
+    state: directory
+
+- name: Download dist file
+  get_url:
+    url: "{{ k8s_helm_download_url }}"
+    dest: "{{ k8s_helm_tmp_download_dir }}/{{ k8s_helm_dist_file }}"
+    checksum: "{{ k8s_helm_dist_file_checksum }}"
+
+- name: Unarchive dist file
+  unarchive:
+    src: "{{ k8s_helm_tmp_download_dir }}/{{ k8s_helm_dist_file }}"
+    dest: "{{ k8s_helm_tmp_download_dir }}"
+    remote_src: yes
+
+- name: Copy binary to bin directory
+  copy:
+    remote_src: yes
+    src: "{{ k8s_helm_tmp_download_dir }}/linux-amd64/helm"
+    dest: "{{ k8s_helm_bin_path }}/helm"
+    owner: root
+    group: root
+    mode: 0755
+  become: yes

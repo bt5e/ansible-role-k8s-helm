@@ -1,0 +1,7 @@
+---
+k8s_helm_version: v2.14.0
+k8s_helm_dist_file: helm-{{ k8s_helm_version }}-linux-amd64.tar.gz
+k8s_helm_dist_file_checksum: "sha256:b5f6a1e642971af1363cadbe1f7f37c029c11dd93813151b521c0dbeacfbdaa9"
+k8s_helm_download_url: https://storage.googleapis.com/kubernetes-helm/{{ k8s_helm_dist_file }}
+k8s_helm_tmp_download_dir: "/tmp/ansible-role-k8s-helm"
+k8s_helm_bin_path: "/usr/local/bin"
