@@ -1,7 +1,7 @@
 ---
-k8s_helm_version: v3.4.0
+k8s_helm_version: v3.5.2
 k8s_helm_dist_file: helm-{{ k8s_helm_version }}-linux-amd64.tar.gz
-k8s_helm_dist_file_checksum: "sha256:270acb0f085b72ec28aee894c7443739271758010323d72ced0e92cd2c96ffdb"
+k8s_helm_dist_file_checksum: "sha256:01b317c506f8b6ad60b11b1dc3f093276bb703281cb1ae01132752253ec706a2"
 k8s_helm_download_url: https://get.helm.sh/{{ k8s_helm_dist_file }}
 k8s_helm_tmp_download_dir: "/tmp/ansible-role-k8s-helm"
 k8s_helm_bin_path: "/usr/local/bin"
